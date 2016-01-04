@@ -6,6 +6,7 @@ namespace ZSharp.Grammar.Function
 {
     public abstract class MatchPattern
     {
+        #region list destructure
         private static readonly Parser<ListDestructureValue> _namedListItemPart =
             from name in Core.Identifier
             select new ListDestructureValue(name);
@@ -54,6 +55,7 @@ namespace ZSharp.Grammar.Function
             from ws2 in Core.InsignificantWhitespace.Many()
             from rb in Parse.Char(']')
             select new ListDestructure(parts.ToArray());
+        #endregion
 
         private static readonly Parser<MatchPattern> _tupleDestructure =
             from lb in Parse.Char('(')

@@ -10,7 +10,8 @@ namespace ZSharp.Test
         [TestMethod]
         public void BasicQSort()
         {
-            Function.Parser.Parse(@"fun qsort : [T] -> [T]
+            Function.Parser.Parse(@"
+fun qsort : [T] -> [T]
     []        => []
     [x]       => [x]
     [x, ..xs] => qsort(lessthan(x), xs)) ++ [x] ++ qsort(greaterthan(x), xs))
