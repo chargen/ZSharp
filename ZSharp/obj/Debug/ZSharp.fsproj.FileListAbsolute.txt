@@ -1,0 +1,11 @@
+c:\users\marti\documents\visual studio 2015\Projects\ZSharp\ZSharp\bin\Debug\ZSharp.XML
+c:\users\marti\documents\visual studio 2015\Projects\ZSharp\ZSharp\bin\Debug\ZSharp.dll
+c:\users\marti\documents\visual studio 2015\Projects\ZSharp\ZSharp\bin\Debug\ZSharp.pdb
+c:\users\marti\documents\visual studio 2015\Projects\ZSharp\ZSharp\bin\Debug\FSharp.Core.dll
+c:\users\marti\documents\visual studio 2015\Projects\ZSharp\ZSharp\bin\Debug\FSharp.Core.xml
+c:\users\marti\documents\visual studio 2015\Projects\ZSharp\ZSharp\obj\Debug\ZSharp.dll
+c:\users\marti\documents\visual studio 2015\Projects\ZSharp\ZSharp\obj\Debug\ZSharp.pdb
+c:\users\marti\documents\visual studio 2015\Projects\ZSharp\ZSharp\bin\Debug\FParsec.dll
+c:\users\marti\documents\visual studio 2015\Projects\ZSharp\ZSharp\bin\Debug\FParsecCS.dll
+c:\users\marti\documents\visual studio 2015\Projects\ZSharp\ZSharp\bin\Debug\FParsec.xml
+c:\users\marti\documents\visual studio 2015\Projects\ZSharp\ZSharp\bin\Debug\FParsecCS.xml

@@ -1,0 +1,15 @@
+c:\Users\marti\documents\visual studio 2015\Projects\ZSharp\ZSharp.Test\bin\Debug\ZSharp.Test.dll
+c:\Users\marti\documents\visual studio 2015\Projects\ZSharp\ZSharp.Test\bin\Debug\ZSharp.Test.pdb
+c:\Users\marti\documents\visual studio 2015\Projects\ZSharp\ZSharp.Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+c:\Users\marti\documents\visual studio 2015\Projects\ZSharp\ZSharp.Test\bin\Debug\ZSharp.dll
+c:\Users\marti\documents\visual studio 2015\Projects\ZSharp\ZSharp.Test\bin\Debug\FSharp.Core.dll
+c:\Users\marti\documents\visual studio 2015\Projects\ZSharp\ZSharp.Test\bin\Debug\ZSharp.pdb
+c:\Users\marti\documents\visual studio 2015\Projects\ZSharp\ZSharp.Test\bin\Debug\ZSharp.xml
+c:\Users\marti\documents\visual studio 2015\Projects\ZSharp\ZSharp.Test\bin\Debug\FSharp.Core.xml
+c:\Users\marti\documents\visual studio 2015\Projects\ZSharp\ZSharp.Test\obj\Debug\ZSharp.Test.csprojResolveAssemblyReference.cache
+c:\Users\marti\documents\visual studio 2015\Projects\ZSharp\ZSharp.Test\obj\Debug\ZSharp.Test.dll
+c:\Users\marti\documents\visual studio 2015\Projects\ZSharp\ZSharp.Test\obj\Debug\ZSharp.Test.pdb
+c:\Users\marti\documents\visual studio 2015\Projects\ZSharp\ZSharp.Test\bin\Debug\FParsec.dll
+c:\Users\marti\documents\visual studio 2015\Projects\ZSharp\ZSharp.Test\bin\Debug\FParsecCS.dll
+c:\Users\marti\documents\visual studio 2015\Projects\ZSharp\ZSharp.Test\bin\Debug\FParsec.xml
+c:\Users\marti\documents\visual studio 2015\Projects\ZSharp\ZSharp.Test\bin\Debug\FParsecCS.xml
