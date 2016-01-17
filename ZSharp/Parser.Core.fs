@@ -19,11 +19,15 @@ module TestHelper =
 
 module Whitespace =
     let significantWs a = ((skipString "  ") <|> (skipString "\t")) a;
-    let ws = spaces;    
+    let ws = spaces;
+    let skip_str_ws str = parse { do! ws
+                                  do! skipString str
+                                  do! ws
+                                  return () };
 
 module Identifier =
     let private identifierStart c = isAsciiLetter c || c = '_'
     let private identifierInner c = isAsciiLetter c || isDigit c || c = '_'
     let private identifierOptions = IdentifierOptions(isAsciiIdStart = identifierStart, isAsciiIdContinue = identifierInner)
-    let identifier a = (identifier identifierOptions) a
+    let parser a = (identifier identifierOptions) a
         
