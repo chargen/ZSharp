@@ -12,6 +12,9 @@ module FunctionSignature =
         Output : Type.TypeSignature;
     }
 
+    // Parses the first line of a function, e.g.:
+    //   fun qsort2 : (N, [T]) -> [T]
+    //        ^ name    ^ input    ^ output
     let rec parser a = (parse { do! Whitespace.skip_str_ws "fun "
                                 let! name = Identifier.parser
                                 do! Whitespace.skip_str_ws ":"

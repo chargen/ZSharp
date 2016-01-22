@@ -15,12 +15,12 @@ fun id : A -> A
 	match (a) => a
 
 fun mul : (A, B) -> C
-	where A : Op(*, (A, B) -> C)
+	where A : Op(* : (A, B) -> C)
 	match (a, b) => a * b
 
-fun add : (A, B) -> C
-	where A : Addable(B -> C)
-	match (a, b) => a + b
+fun blargh : (A, B) -> C
+	where A : Trait(B -> C) as dostuff
+	match (a, b) => a.dostuff(b)
 
 	where B : Addable(A -> C)
 	match (a, b) => b + a

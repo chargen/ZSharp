@@ -66,6 +66,7 @@
     <Compile Include="Parser.Type.fs" />
     <Compile Include="Parser.FunctionSignature.fs" />
     <None Include="example.zs" />
+    <Compile Include="Parser.FunctionRestrictions.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FParsec">
