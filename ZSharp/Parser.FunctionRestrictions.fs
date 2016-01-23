@@ -11,20 +11,21 @@ module FunctionRestrictions =
         | D of DirectTypeRestriction
         | U of Unit
 
+    // A restriction of the type A:B meaning A is a B
     and DirectTypeRestriction = {
-        Left: string
+        Left: Type.NamedType
         Right: TypeSignature
     }
 
     //Parses the restrictions on types in a function. e.g.
-    //	  where A : X
-    //	  where B : Y
-    //	  where C : Z
-    let rec parser a = (parse { let! a = skipString "A"
-                                return D({Left = "A"; Right = N({ Name = "B" }) })}) a;
+    //	  A : X
+    let rec parser a = ((direct_type_restriction |>> D)) a;
 
-    and direct_type_restriction a = (parse { do! Whitespace.skip_str_ws "where "
+    // A restriction meaning the left type is a more derived type than the right e.g. A : B
+    and direct_type_restriction a = (parse { let! left = Parser.Type.named_parser
+                                             do! Whitespace.skip_str_ws ":"
+                                             let! right = Parser.Type.parser
                                              return {
-                                                 Left = "A";
-                                                 Right = N({ Name = "X" });
+                                                 Left = left;
+                                                 Right = right;
                                              }}) a;

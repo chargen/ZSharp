@@ -1,15 +1,15 @@
 ﻿fun qsort : [T] -> [T]
-    []        => []
-    [x]       => [x]
-    [x, ..xs] => qsort(lessthan(x), xs)) ++ [x] ++ qsort(greaterthan(x), xs))
+match []        => []
+	  [x]       => [x]
+	  [x, ..xs] => qsort(lessthan(x), xs)) ++ [x] ++ qsort(greaterthan(x), xs))
 
 fun qsort2 : (N, [T]) -> [T]
 	where N : Integer(positive, zero)
-		| T : Comparable
+		  T : Comparable
 	match (0, x)               => x
-		| (_, [])              => []
-		| (_, [x])             => [x]
-		| (c, [x, ..xs])       => qsortRecursive(c - 1, filter((a => a < x), xs)) ++ [x] ++ qsortRecursive(c - 1, filter((a => a > x), xs))
+		  (_, [])              => []
+		  (_, [x])             => [x]
+		  (c, [x, ..xs])       => qsortRecursive(c - 1, filter((a => a < x), xs)) ++ [x] ++ qsortRecursive(c - 1, filter((a => a > x), xs))
 
 fun id : A -> A
 	match (a) => a

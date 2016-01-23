@@ -24,6 +24,10 @@ module Whitespace =
                                   do! skipString str
                                   do! ws
                                   return () };
+    let skip_newline_ws a = (parse { do! ws
+                                     do! CharParsers.skipUnicodeNewline
+                                     do! ws
+                                     return () }) a;
 
 module Identifier =
     let private identifierStart c = isAsciiLetter c || c = '_'
