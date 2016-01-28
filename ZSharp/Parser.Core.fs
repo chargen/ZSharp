@@ -18,15 +18,20 @@ module TestHelper =
             | Failure(err, _, u) -> failure.Invoke (err, u)
 
 module Whitespace =
+    let surroundedby outer inner = between outer outer inner;
+
+    let skip_surroundedby outer inner a = ((surroundedby outer inner) >> ignore) a;
+
     let significantWs a = ((skipString "  ") <|> (skipString "\t")) a;
     let ws = spaces;
+    let ws_not_newline a = (skipManySatisfy (function ' '|'\t' -> true | _ -> false)) a;
     let skip_str_ws str = parse { do! ws
                                   do! skipString str
                                   do! ws
                                   return () };
-    let skip_newline_ws a = (parse { do! ws
+    let skip_newline_ws a = (parse { do! ws_not_newline
                                      do! CharParsers.skipUnicodeNewline
-                                     do! ws
+                                     do! ws_not_newline
                                      return () }) a;
 
 module Identifier =

@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="Grammar\FunctionRestrictionsTest.cs" />
     <Compile Include="Grammar\FunctionSignatureTest.cs" />
+    <Compile Include="Grammar\FunctionTest.cs" />
     <Compile Include="Grammar\IdentifierTest.cs" />
     <Compile Include="Grammar\TypeTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
