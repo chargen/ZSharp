@@ -62,6 +62,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Grammar\ExpressionTest.cs" />
     <Compile Include="Grammar\FunctionRestrictionsTest.cs" />
     <Compile Include="Grammar\FunctionSignatureTest.cs" />
     <Compile Include="Grammar\FunctionTest.cs" />

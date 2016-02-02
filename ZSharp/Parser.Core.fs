@@ -12,9 +12,10 @@ module TestHelper =
         : unit =
             let p a = parser.Invoke a
             let result = runParserOnString p state "" input
+
             match result with
             | Success(r, u, p) when p.Index = (int64 input.Length) -> success.Invoke (u, r);
-            | Success(_, u, _) -> failure.Invoke ("Did not consume entire stream", u);
+            | Success(_, u, p) -> failure.Invoke ((String.Format ("Did not consume entire stream. Remaining: '{0}'", input.Substring ((int)p.Index))), u);
             | Failure(err, _, u) -> failure.Invoke (err, u)
 
 module Whitespace =

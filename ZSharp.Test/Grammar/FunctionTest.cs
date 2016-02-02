@@ -12,7 +12,7 @@ namespace ZSharp.Test.Grammar
             var fun = TestHarness.TestPositive(Functions.function_parser,
 @"fun test:(A -> B) -> (A -> B)
     where [ A : B ]
-    let hello = 1");
+    an_expression");
 
             Assert.AreEqual("test", fun.Signature.Name);
         }
