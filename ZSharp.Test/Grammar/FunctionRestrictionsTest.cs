@@ -42,7 +42,7 @@ namespace ZSharp.Test.Grammar
         [TestMethod]
         public void FunctionHeader_TypeRestrictions_Parses_SingleDirectRestriction()
         {
-            var fun = TestHarness.TestPositive(Functions.restrictions_list, "where A : B").Single();
+            var fun = TestHarness.TestPositive(Functions.restrictions_list, "where [ A : B ]").Single();
 
             Assert.AreEqual("A", (((Functions.Restriction.D)fun).Item).Left.Name);
 
@@ -53,23 +53,7 @@ namespace ZSharp.Test.Grammar
         [TestMethod]
         public void FunctionHeader_TypeRestrictions_Parses_MultipleCommaSeparatedDirectRestrictions()
         {
-            var fun = TestHarness.TestPositive(Functions.restrictions_list, "where A : B, C : D").ToArray();
-
-            Assert.AreEqual(2, fun.Length);
-
-            var first = fun[0];
-            Assert.AreEqual("A", ((Functions.Restriction.D)first).Item.Left.Name);
-            Assert.AreEqual("B", ((Type.TypeSignature.N)(((Functions.Restriction.D)first).Item.Right)).Item.Name);
-
-            var second = fun[1];
-            Assert.AreEqual("C", ((Functions.Restriction.D)second).Item.Left.Name);
-            Assert.AreEqual("D", ((Type.TypeSignature.N)(((Functions.Restriction.D)second).Item.Right)).Item.Name);
-        }
-
-        [TestMethod]
-        public void FunctionHeader_TypeRestrictions_Parses_MultipleAmpersandSeparatedDirectRestrictions()
-        {
-            var fun = TestHarness.TestPositive(Functions.restrictions_list, "where A : B & C : D").ToArray();
+            var fun = TestHarness.TestPositive(Functions.restrictions_list, "where [ A : B, C : D ]").ToArray();
 
             Assert.AreEqual(2, fun.Length);
 

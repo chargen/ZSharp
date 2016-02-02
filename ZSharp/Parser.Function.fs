@@ -56,8 +56,10 @@ module Functions =
                                           Output = output
                                       }}) a;
 
-    let restrictions_list a = (parse { do! Whitespace.skip_str_ws "where "
-                                       let! restrictions = sepBy1 restriction_parser (between Whitespace.ws Whitespace.ws (anyOf ",&"))
+    let restrictions_list a = (parse { do! Whitespace.skip_str_ws "where"
+                                       do! Whitespace.skip_str_ws "["
+                                       let! restrictions = sepBy restriction_parser (attempt (Whitespace.skip_str_ws ","))
+                                       do! Whitespace.skip_str_ws "]"
                                        return restrictions
                                      }) a;
     
