@@ -16,12 +16,13 @@ namespace ZSharp.Test.Grammar
         }
 
         [TestMethod]
-        public void Expression_ParsesBindVariable()
+        public void Expression_ParsesBindVariable_WithTypeBinding()
         {
-            var exp = TestHarness.TestPositive(Expressions.parser, "let a = b");
+            var exp = TestHarness.TestPositive(Expressions.parser, "let a : T = b");
 
             var left = (Expressions.Expression.Bind)exp;
             Assert.AreEqual("a", left.Item.Name);
+            Assert.AreEqual("T", ((Type.TypeSignature.N)left.Item.Type.Value).Item.Name);
 
             var right = (Expressions.Expression.Read)left.Item.Value;
             Assert.AreEqual("b", right.Item.Name);

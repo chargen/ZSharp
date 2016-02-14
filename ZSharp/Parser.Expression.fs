@@ -27,8 +27,9 @@ module Expressions =
         | Conditional of ConditionalExpression  // if <Expression> then <Expression> else <Expression>
         | Constructor of ConstructorExpression  //todo: "[" or "(" or "(" or 1234567890
         | Call of FunctionCallExpression        //todo: (<Expression> <Expression>)
-        | Bind of BindExpression                // let <identifier> = <Expression>
+        | Bind of BindExpression                // let <identifier> (: type) = <Expression>
         | Read of ReadExpression                // <identifier>
+        | Fun of FunctionExpression             //todo: fun (args => expression\n)*
 
     and OperatorExpression = {
         Left: Expression;
@@ -60,6 +61,7 @@ module Expressions =
 
     and BindExpression = {
         Name: string;
+        Type: Option<TypeSignature>;
         Value: Expression;
     }
 
@@ -67,13 +69,18 @@ module Expressions =
         Name: string;
     }
 
+    and FunctionExpression = {
+        Foo: string;
+    }
+
     let rec parser a = ((conditional_expression |>> Conditional) <|> (bind_parser |>> Bind) <|> (read_expression |>> Read)) a;
 
     and bind_parser a = (parse { do! Whitespace.skip_str_ws "let "
                                  let! name = Identifier.parser
+                                 let! typ = opt (Whitespace.skip_str_ws ":" >>. Parser.Type.parser) 
                                  do! Whitespace.skip_str_ws "="
                                  let! exp = parser
-                                 return { Name = name; Value = exp; }
+                                 return { Name = name; Value = exp; Type = typ; }
                                }) a;
 
     and read_expression a = (parse { let! name = Identifier.parser
